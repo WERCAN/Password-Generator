@@ -13,6 +13,9 @@ const lowerLetters = "abcdefghijklmnopqrstuvwxyz";
 const numbers = '0123456789';
 const symbols = "!@#$%^&*()_+=";
 
+
+//------get a letter/number/symbol randomly--------------
+
 function getLowercase() {
     return lowerLetters[Math.floor(Math.random() * lowerLetters.length)];
 }
@@ -29,10 +32,14 @@ function getSymbol() {
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+
+
 function generatePassword() {
     const len = lenEl.value;
 
     let password = '';
+
+    //-----to include at least one char when checked---------
 
     if (upperEl.checked) {
         password += getUppercase();
@@ -84,6 +91,8 @@ function generateX() {
 }
 
 generateEl.addEventListener('click', generatePassword);
+
+//--------Copy to clipboard----------------------------
 
 copyEl.addEventListener('click', () => {
 
